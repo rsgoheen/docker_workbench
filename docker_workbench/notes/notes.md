@@ -11,6 +11,8 @@
     * Lightweight, managed "environments" for running discreet applications
     * Built up around process isolation rather than virtualization
         * Only necessary resources
+        * Process isolation and resource management (CPU, memory)
+        * Namespaces
     * Containers on Windows?
     * Windows containers?
 
@@ -27,7 +29,7 @@
 
  * Orchestration overview
 
- 8 
+
 
 
 
