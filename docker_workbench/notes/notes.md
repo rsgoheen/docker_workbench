@@ -22,12 +22,44 @@
         * Docker files
         * Docker images
         * Docker repository (Docker Hub)
-
- * Running Docker (single images)
-
+    * Docker is also ....
+        * Open source
+        * Written in Go
+ 
  * Docker files
+    * Demo of docker file
+        * RabbitMQ Docker file
+            * FROM
+            * RUN
+            * ENTRYPOINT
+        * Caching
 
- * Orchestration overview
+ * Docker repositories 
+    * Docker hub
+    * Private repositories
+
+ * Running Docker - RabbitMQ Example
+    * docker build
+    * docker images
+    * docker pull
+    * docker run
+
+ * Docker Compose - RabbitMQ Cluster Example
+
+ * Docker and Microsoft
+    * Containers on Windows
+    * Containers on Hyper-V
+    * Windows containers
+    * Windows containers vs Linux containers
+
+ * The Container Ecosystem
+    * Docker Machine
+    * Docker Compose
+    * Docker Swarm
+    * Google Kubernetes 
+    * DC/OS
+
+
 
 
 
