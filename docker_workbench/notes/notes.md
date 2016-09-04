@@ -31,7 +31,7 @@
         * RabbitMQ Docker file
             * FROM
             * RUN
-            * ENTRYPOINT
+            * ENTRYPOINT/CMD
         * Caching
 
  * Docker repositories 
@@ -58,6 +58,8 @@
     * Docker Swarm
     * Google Kubernetes 
     * DC/OS
+
+* Docker and Configuration
 
 
 

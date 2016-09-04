@@ -1,110 +1,106 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Introduction to Docker</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/sky.css">
+	<title>Introduction to Docker</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/sky.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>An Introduction to Docker</h1>
+			</section>
+			<section>
+				<h1>What is Docker?</h1>
+			</section>
+			<section>
+				<h2>Docker is not Virtualization</h2>
+
+				[graphic of virtualization]
+			</section>
+			<section>
+				<h2>Docker is an Isolated Runtime Environment</h2>
+				<p>Isolation of:</p>
+				<ul>
+					<li class="fragment">Processes</li>
+					<li class="fragment">Filesystem</li>
+					<li class="fragment">Environmental Variables</li>
+				</ul>
+
+				<aside class="notes">
+					The unit of isolation is known as a container. However, containers are often referred to in a more generic context and not
+					necessarily Docker. Containers are an encapsulation of an application with its dependencies. Containers share resources.
+					Containers do not require the full start up cycle of a VM or OS
+				</aside>
+
+			</section>
+			<section class="notes">
+				<h2>The Container Family Tree</h2>
+				<ul>
+					<li class="fragment visible">Early *nix - user and file isolation (chroot)</li>
+					<li class="fragment">2000 - BSD Jails</li>
+					<li class="fragment">2004 - Solaris Zones</li>
+					<li class="fragment">2006 - Linux cgroup (control groups)</li>
+					<li class="fragment">2013 - Docker</li>
+				</ul>
+
+				<aside class="notes">
+					<section data-markdown>
+						<script type="text/template">
+						Unlike virtualization, which was about being able to run multiple, full operating systems on shared hardware Containers came
+						from work on isolating and managing processes on a single Unix-type OS From early on, Unix and other similar systems
+						had user and file isolation But inter-process communication and other resource sharing was pretty open (based on trust)
+						1. BSD Jails - process restrictions on file and network access 2. Solaris Zones - expansion of Jails concept with more
+						adiministrative tools * Zones were very successful with Solaris users * First instance of the phrase "container" 3.
+						Linux cgroups - 4. In 2010 a company called dotCloud was formed to create a formal platform-as-a-service offering. InJanuary
+						2013, they open-sourced their product, called Docker References: * https://www.kentik.com/the-evolution-of-docker/ *
+						http://searchservervirtualization.techtarget.com/feature/A-brief-history-of-Docker-Containers-overnight-success * https://en.wikipedia.org/wiki/Docker_(software)
+				    	</script>
+					</section>
+			</section>
+			<section>
+				<h2>But What <i>is</i> Docker?</h2>
+				A set of tools and file format for describing containers and a runtime for setting up and running isolation environments
+				on an existing operating system.
+				<p class="fragment">Open source</p>
+				<p class="fragment">Written in Go</p>
+				<p class="fragment">Docker, Inc. (previously dotCloud)</p>
+			</section>
+			<section>
+				<h2>Docker containers</h2>
+				<p class="fragment">Dockerfile</p>
 				<section>
-					<h1>An Introduction to Docker</h1>
+					[IMAGE OF DOCKERFILE]
 				</section>
-				<section>
-					<h1>What is Docker?</h1>
-				</section>
-				<section>
-					<h2>Docker is not Virtualization</h2>
-
-					[graphic of virtualization]
-				</section>
-				<section>
-					<h2>Docker is an Isolated Runtime Environment</h2>
-					<p>Isolation of:</p>
-					<ul>
-						<li class="fragment">Processes</li>
-						<li class="fragment">Filesystem</li>
-						<li class="fragment">Environmental Variables</li>
-					</ul>
-
-					<aside class="notes">
-						The unit of isolation is known as a container.  However, containers are often referred to in
-						a more generic context and not necessarily Docker.
-
-						Containers are an encapsulation of an application with its dependencies.
-
-						Containers share resources.
-
-						Containers do not require the full start up cycle of a VM or OS
-					</aside>
-
-				</section>
-				<section class="notes">
-					<h2>The Container Family Tree</h2>
-					<p class="fragment visible">Early *nix - user and file isolation (chroot)</p>
-					<p class="fragment">2000 - BSD Jails</p>
-					<p class="fragment">2004 - Solaris Zones</p>
-					<p class="fragment">2006 - Linux cgroup (control groups)</p>
-					<p class="fragment">2013 - Docker</p>
-
-
-					<aside class="notes">
-						Unlike virtualization, which was about being able to run multiple, full operating systems on shared hardware
-
-						Containers came from work on isolating and managing processes on a single Unix-type OS
-
-						From early on, Unix and other similar systems had user and file isolation
-
-						But inter-process communication and other resource sharing was pretty open (based on trust)
-
-						1. BSD Jails - process restrictions on file and network access
-						2. Solaris Zones - expansion of Jails concept with more adiministrative tools
-							* Zones  were very successful with Solaris users
-							* First instance of the phrase "container"
-						3. Linux cgroups - 
-
-						4. In 2010 a company called dotCloud was formed to create a formal platform-as-a-service offering.  InJanuary 2013, they
-						open-sourced their product, called Docker
-
-						References:
-							* https://www.kentik.com/the-evolution-of-docker/
-							* http://searchservervirtualization.techtarget.com/feature/A-brief-history-of-Docker-Containers-overnight-success
-							* https://en.wikipedia.org/wiki/Docker_(software) 
-				</section>
-				<section>
-					<h2>But What <i>is</i> Docker?</h2>
-						<p class="fragment">Open source</p>
-						<p class="fragment">Written in Go</p>
-						<p class="fragment">Based on images</p>
-						<p class="fragment">... which are based on Dockerfiles</p>
-
-
-
-				</section>
-			</div>
+				<p class="fragment">Images</p>
+				<p class="fragment">Repositories</p>
+			</section>
 		</div>
+	</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
 
-		<script>
+	<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
@@ -122,5 +118,6 @@
 				]
 			});
 		</script>
-	</body>
+</body>
+
 </html>
