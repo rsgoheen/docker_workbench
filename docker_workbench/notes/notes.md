@@ -63,7 +63,33 @@
 
 
 
-
-
+* Demos
+    * Show Dockerfile
+    * Run Hello World
+        * Basic pull
+    * Run Debian
+        * -it for attaching to container
+        * immutable image demo
+            * "rm -Rf /bin/ls"
+            * exit and restart
+        * persisting a change
+            * tmux 
+            * "rm -Rf /bin/ls"
+            * log
+            * save and restart
+    * Run RabbitMQ
+        * Port binding
+    * Docker compose for RabbitMQ Cluster   
+        * Show YAML file
+    * Windows container
+        * Docker command from PowerShell
+            * Basic command
+            * Running as a service
+        * What doesn't work on Windows
+        * "docker search microsoft"
+        * IIS image
+            * Dockerfile
+            * echo
+            * port
 
 
