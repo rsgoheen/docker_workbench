@@ -65,20 +65,30 @@
 
 * Demos
     * Show Dockerfile
+    * Docker commandline
     * Run Hello World
         * Basic pull
+    * Show Docker image file sizes
     * Run Debian
         * -it for attaching to container
         * immutable image demo
-            * "rm -Rf /bin/ls"
+            * "rm -Rf /bin/date"
             * exit and restart
         * persisting a change
             * tmux 
-            * "rm -Rf /bin/ls"
+            * "rm -Rf /bin/date"
             * log
-            * save and restart
+            * commit
+                * docker [save?] label
+            * and restart
     * Run RabbitMQ
+        * Build from Dockerfile
+            * docker build --tag rsgoheen/rabbitmq:latest .
         * Port binding
+            * docker run -d -p 15672:15672 rsgoheen/rabbitmq
+        * Multiple containers from one image
+            * docker run -d -p 15672:15672 rsgoheen/rabbitmq
+            * docker run -d -p 15673:15672 rsgoheen/rabbitmq
     * Docker compose for RabbitMQ Cluster   
         * Show YAML file
     * Windows container

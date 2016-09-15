@@ -34,53 +34,48 @@
 			</section>
 			<section>
 				<h2>Docker is not Virtualization</h2>
-
-				[graphic of virtualization]
 			</section>
 			<section>
-				<h2>Docker is an Isolated Runtime Environment</h2>
-				<p>Isolation of:</p>
+				<img src="static/images/vm.png" />
+			</section>
+			<section>
+				<img src="static/images/container.png" />
+			</section>
+			<section>
+				<h2>Isolated of Runtime Environment</h2>
+				<p>Encapsulation and separation of:</p>
 				<ul>
 					<li class="fragment">Processes</li>
-					<li class="fragment">Filesystem</li>
 					<li class="fragment">Environmental Variables</li>
+					<li class="fragment">Filesystem</li>
 				</ul>
 
-				<aside class="notes">
+				<!-- aside class="notes">
 					The unit of isolation is known as a container. However, containers are often referred to in a more generic context and not
 					necessarily Docker. Containers are an encapsulation of an application with its dependencies. Containers share resources.
 					Containers do not require the full start up cycle of a VM or OS
-				</aside>
+				</aside -->
 
 			</section>
-			<section class="notes">
-				<h2>The Container Family Tree</h2>
+			<section>
+				<h2>The Container Timeline</h2>
 				<ul>
-					<li class="fragment visible">Early *nix - user and file isolation (chroot)</li>
+					<li class="fragment">Early *nix - user and file isolation (chroot)</li>
 					<li class="fragment">2000 - BSD Jails</li>
 					<li class="fragment">2004 - Solaris Zones</li>
 					<li class="fragment">2006 - Linux cgroup (control groups)</li>
 					<li class="fragment">2013 - Docker</li>
+					<li class="fragment">June 2014 - Docker Version 1.0 Release</li>
 				</ul>
-
-				<aside class="notes">
-					<section data-markdown>
-						<script type="text/template">
-						Unlike virtualization, which was about being able to run multiple, full operating systems on shared hardware Containers came
-						from work on isolating and managing processes on a single Unix-type OS From early on, Unix and other similar systems
-						had user and file isolation But inter-process communication and other resource sharing was pretty open (based on trust)
-						1. BSD Jails - process restrictions on file and network access 2. Solaris Zones - expansion of Jails concept with more
-						adiministrative tools * Zones were very successful with Solaris users * First instance of the phrase "container" 3.
-						Linux cgroups - 4. In 2010 a company called dotCloud was formed to create a formal platform-as-a-service offering. InJanuary
-						2013, they open-sourced their product, called Docker References: * https://www.kentik.com/the-evolution-of-docker/ *
-						http://searchservervirtualization.techtarget.com/feature/A-brief-history-of-Docker-Containers-overnight-success * https://en.wikipedia.org/wiki/Docker_(software)
-				    	</script>
-					</section>
+			</section>
+			<section>
+				<h2>Docker == containers</h2>
+				<h2 class="fragment">Containers != Docker</h2>
 			</section>
 			<section>
 				<h2>But What <i>is</i> Docker?</h2>
 				<p>A set of tools and a file format for describing containers and a runtime for setting up and running isolation environments
-				on an existing operating system.</p>
+					on an existing operating system.</p>
 				<ul>
 					<li class="fragment">Open source</li>
 					<li class="fragment">Written in Go</li>
@@ -88,26 +83,38 @@
 				</ul>
 			</section>
 			<section>
-				<h2>Why Docker, Why Now?</h2>
+				<h2>Docker's Popularity</h2>
 				<ul>
-					<li class="fragment">Initial Docker 1.0 release: summer 2014</li>
-					<li class="fragment">X,XXX contributors to open source project</li>
-					<li class="fragment">Large community</li>
-					<li class="fragment">Enormous ecosystem</li>
+					<li class="fragment">GitHub project: 1,500 contributors, 10,000 forks, 35,000 stars</li>
+					<li class="fragment">Large ecosystem</li>
 					<li class="fragment">Backing by Microsoft</li>
 				</ul>
 			</section>
 			<section>
-				<h2>Docker containers</h2>
-				<p class="fragment">Dockerfile</p>
-				<section>
-					[IMAGE OF DOCKERFILE]
-				</section>
-				<p class="fragment">Images</p>
-				<p class="fragment">Repositories</p>
+				<img src="static/images/Microsoft_LOVES_Linux.jpg" />
+			</section>
+			<section>
+				<h2>... but why?</h2>
+				<ul>
+					<li class="fragment">Abhorring the vaccuum</li>
+					<li class="fragment">Microservices paradigm</li>
+					<li class="fragment">Cattle, not pets</li>
+					<li class="fragment">Infrasctructure as code</li>
+					<li class="fragment">Docker provided the best, simplest container implementation available</li>
+			</section>
+			<section>
+				<h2>Docker Container Components</h2>
+				<ul>
+					<li class="fragment">Dockerfile</li>
+					<li class="fragment">Images</li>
+					<li class="fragment">Repositories</li>
+					<li class="fragment">Running containers</li>
+				</ul>
 			</section>
 		</div>
 	</div>
+
+
 
 	<script src="lib/js/head.min.js"></script>
 	<script src="js/reveal.js"></script>
